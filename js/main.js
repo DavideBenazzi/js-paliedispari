@@ -13,19 +13,53 @@ Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
 Dichiariamo chi ha vinto in base alla scelta pario o dispari fatta all'inizio dall'utente.
 */
 
-//PALINDROMA
+/**
+*PALINDROMA*********************************************************************
+*/
+//CHIEDO PAROLA ALL'UTENTE
 var parola = prompt('Inserisci una parola.').toLowerCase().trim();
-
-function inverti (word) {
+//FUNZIONE PER INVERTIRE L'ORDINE DEI CARATTERI IN UNA STRINGA
+function inverti (wordToReverse) {
   var parolaInvertita = '';
-  for (var i = word.length - 1; i >= 0; i--) {
-    parolaInvertita += word[i];
+  for (var i = wordToReverse.length - 1; i >= 0; i--) {
+    parolaInvertita += wordToReverse[i];
   }
   return parolaInvertita;
 }
-
+//DECISIONE PER CAPIRE SE LA PAROLA E' PALINDROMA
  if (inverti(parola) === parola) {
    alert('La parola inserita e\' palindroma!');
  } else {
    alert('La parola inserita non e\' palindroma!');
  }
+
+/**
+*PARI E DISPARI*****************************************************************
+*/
+//CHIEDO ALL'UTENTE SE PARI O DISPARI ED UN NUMERO DA 1 A 5
+var scommessa = prompt('Scegli pari o dispari.').toLowerCase().trim();
+var numeroUtente = parseInt( prompt('Scegli un numero da 1 a 5.') );
+//FUNZIONE PER CALCOLARE UN NUMERO RANDOM DA 1 A 5
+function random1to5 () {
+  return (Math.floor( Math.random() * 5 ) + 1);
+}
+//FUNZIONE PER STABILIRE SE UN NUMERO E' PARI O DISPARI
+function pariDispari (num) {
+  if (num % 2 === 0) {
+    return 'pari';
+  }
+  return 'dispari';
+}
+//VARIABILI PER DECISIONE VINCITORE
+var numRandomPc = random1to5();
+var somma = numeroUtente + numRandomPc;
+//DECISIONE SU PARI O DISPARI
+if ( (pariDispari(somma) === 'pari') && (scommessa === 'pari') ) {
+  alert('Congratulazioni! Hai vinto! Il tuo numero era : ' + numeroUtente + ',' + ' mentre il numero scelto dal pc era : ' + numRandomPc + ' quindi la somma fa : ' + somma + ' e di conseguenza è pari!');
+} else if ( (pariDispari(somma) === 'dispari') && (scommessa === 'dispari') ) {
+  alert('Congratulazioni! Hai vinto! Il tuo numero era : ' + numeroUtente + ',' + ' mentre il numero scelto dal pc era : ' + numRandomPc + ' quindi la somma fa : ' + somma + ' e di conseguenza è dispari!');
+} else if ( (pariDispari(somma) === 'pari') && (scommessa === 'dispari') ) {
+  alert('Mi spiace! Hai perso! Il tuo numero era : ' + numeroUtente + ',' + ' mentre il numero scelto dal pc era : ' + numRandomPc + ' quindi la somma fa : ' + somma + ' e di conseguenza è pari!');
+} else if ( (pariDispari(somma) === 'dispari') && (scommessa === 'pari') ) {
+  alert('Mi spiace! Hai perso! Il tuo numero era : ' + numeroUtente + ',' + ' mentre il numero scelto dal pc era : ' + numRandomPc + ' quindi la somma fa : ' + somma + ' e di conseguenza è dispari!');
+}
