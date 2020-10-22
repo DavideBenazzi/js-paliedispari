@@ -12,3 +12,20 @@ Sommiamo i due numeri
 Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
 Dichiariamo chi ha vinto in base alla scelta pario o dispari fatta all'inizio dall'utente.
 */
+
+//PALINDROMA
+var parola = prompt('Inserisci una parola.').toLowerCase().trim();
+
+function inverti (word) {
+  var parolaInvertita = '';
+  for (var i = word.length - 1; i >= 0; i--) {
+    parolaInvertita += word[i];
+  }
+  return parolaInvertita;
+}
+
+ if (inverti(parola) === parola) {
+   alert('La parola inserita e\' palindroma!');
+ } else {
+   alert('La parola inserita non e\' palindroma!');
+ }
