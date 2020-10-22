@@ -55,11 +55,11 @@ var numRandomPc = random1to5();
 var somma = numeroUtente + numRandomPc;
 //DECISIONE SU PARI O DISPARI
 if ( (pariDispari(somma) === 'pari') && (scommessa === 'pari') ) {
-  alert('Congratulazioni! Hai vinto! Il tuo numero era : ' + numeroUtente + ',' + ' mentre il numero scelto dal pc era : ' + numRandomPc + ' quindi la somma fa : ' + somma + ' e di conseguenza è pari!');
+  alert('Congratulazioni! Hai vinto! Il tuo numero era : ' + numeroUtente + ',' + ' mentre il numero scelto dal pc era : ' + numRandomPc + ' quindi la somma fa : ' + somma + ' e di conseguenza è pari, infatti tu avevi scelto : ' + scommessa);
 } else if ( (pariDispari(somma) === 'dispari') && (scommessa === 'dispari') ) {
-  alert('Congratulazioni! Hai vinto! Il tuo numero era : ' + numeroUtente + ',' + ' mentre il numero scelto dal pc era : ' + numRandomPc + ' quindi la somma fa : ' + somma + ' e di conseguenza è dispari!');
+  alert('Congratulazioni! Hai vinto! Il tuo numero era : ' + numeroUtente + ',' + ' mentre il numero scelto dal pc era : ' + numRandomPc + ' quindi la somma fa : ' + somma + ' e di conseguenza è dispari, infatti tu avevi scelto : ' + scommessa);
 } else if ( (pariDispari(somma) === 'pari') && (scommessa === 'dispari') ) {
-  alert('Mi spiace! Hai perso! Il tuo numero era : ' + numeroUtente + ',' + ' mentre il numero scelto dal pc era : ' + numRandomPc + ' quindi la somma fa : ' + somma + ' e di conseguenza è pari!');
+  alert('Mi spiace! Hai perso! Il tuo numero era : ' + numeroUtente + ',' + ' mentre il numero scelto dal pc era : ' + numRandomPc + ' quindi la somma fa : ' + somma + ' e di conseguenza è pari e tu avevi scelto : ' + scommessa);
 } else if ( (pariDispari(somma) === 'dispari') && (scommessa === 'pari') ) {
-  alert('Mi spiace! Hai perso! Il tuo numero era : ' + numeroUtente + ',' + ' mentre il numero scelto dal pc era : ' + numRandomPc + ' quindi la somma fa : ' + somma + ' e di conseguenza è dispari!');
+  alert('Mi spiace! Hai perso! Il tuo numero era : ' + numeroUtente + ',' + ' mentre il numero scelto dal pc era : ' + numRandomPc + ' quindi la somma fa : ' + somma + ' e di conseguenza è dispari, e tu avevi scelto : '+ scommessa);
 }
