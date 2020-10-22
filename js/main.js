@@ -36,9 +36,17 @@ function inverti (wordToReverse) {
 /**
 *PARI E DISPARI*****************************************************************
 */
-//CHIEDO ALL'UTENTE SE PARI O DISPARI ED UN NUMERO DA 1 A 5
-var scommessa = prompt('Scegli pari o dispari.').toLowerCase().trim();
-var numeroUtente = parseInt( prompt('Scegli un numero da 1 a 5.') );
+//CONTROLLO PER DATI IMMESSI DALL'UTENTE
+var scommessa = '';
+var numeroUtente = 0;
+//CONTROLLO STRINGA
+do {
+  scommessa = prompt('Per favore digitare o pari o dispari.').toLowerCase().trim();
+} while ( !( (scommessa === 'pari') || (scommessa === 'dispari') ) );
+//CONTROLLO NUMERO
+do {
+  numeroUtente = parseInt( prompt('Per favore digitare un numero tra 1 e 5.') );
+} while ( (numeroUtente < 1) || (numeroUtente > 5) );
 //FUNZIONE PER CALCOLARE UN NUMERO RANDOM DA 1 A 5
 function random1to5 () {
   return (Math.floor( Math.random() * 5 ) + 1);
